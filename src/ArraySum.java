@@ -9,5 +9,10 @@ public class ArraySum {
         }
 
         System.out.println("Total Sum: " + sum);
+        int[] number = {2, 4, 6};
+
+        for(int i = 0; i < number.length; i++) {
+            System.out.println(number[i]);
+        }
     }
 }
