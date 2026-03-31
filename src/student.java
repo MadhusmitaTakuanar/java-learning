@@ -5,7 +5,6 @@ public class student {
     private String name;
     private int age;
 
-    // Constructor
     public student(String name, int age) {
         this.name = name;
         this.age = age;
@@ -15,20 +14,48 @@ public class student {
         System.out.println("Name: " + name + ", Age: " + age);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public static void main(String[] args) {
 
-        // Create ArrayList
         ArrayList<student> students = new ArrayList<>();
 
-        // Add objects
+        // CREATE
         students.add(new student("Madhusmita", 26));
         students.add(new student("Rahul", 24));
         students.add(new student("Priya", 22));
-        students.add(new student("shree", 26));
 
-        // Loop through list
+        // READ
+        System.out.println("All Students:");
         for (student s : students) {
             s.showDetails();
+        }
+
+        // DELETE (remove Rahul)
+        students.removeIf(s -> s.getName().equals("Rahul"));
+
+        System.out.println("\nAfter Deletion:");
+        for (student s : students) {
+            s.showDetails();
+        }
+
+        // SEARCH
+        String searchName = "Priya";
+        boolean found = false;
+
+        for (student s : students) {
+            if (s.getName().equals(searchName)) {
+                System.out.println("\nStudent Found:");
+                s.showDetails();
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("\nStudent not found");
         }
     }
 }
