@@ -17,6 +17,9 @@ public class student {
     public String getName() {
         return name;
     }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public static void main(String[] args) {
 
@@ -56,6 +59,20 @@ public class student {
 
         if (!found) {
             System.out.println("\nStudent not found");
+        }
+        // UPDATE (change Priya's age)
+        // UPDATE
+        String updateName = "Priya";
+
+        for (student s : students) {
+            if (s.getName().equals(updateName)) {
+                System.out.println("\nUpdating student...");
+                s.setAge(30);
+            }
+        }
+        System.out.println("\nAfter Update:");
+        for (student s : students) {
+            s.showDetails();
         }
     }
 }
