@@ -1,51 +1,34 @@
+import java.util.ArrayList;
+
 public class student {
 
     private String name;
     private int age;
-    private double marks;
 
-    // Setter methods
-    public void setName(String name) {
+    // Constructor
+    public student(String name, int age) {
         this.name = name;
-    }
-
-    public void setAge(int age) {
-        if (age > 0) {   // validation
-            this.age = age;
-        }
-    }
-
-    public void setMarks(double marks) {
-        this.marks = marks;
-    }
-
-    // Getter methods
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public double getMarks() {
-        return marks;
+        this.age = age;
     }
 
     public void showDetails() {
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age);
-        System.out.println("Marks: " + marks);
+        System.out.println("Name: " + name + ", Age: " + age);
     }
 
     public static void main(String[] args) {
 
-        student s1 = new student();
+        // Create ArrayList
+        ArrayList<student> students = new ArrayList<>();
 
-        s1.setName("Madhusmita");
-//        s1.setAge(26);
-        s1.setMarks(85.5);
-        s1.setAge(-5);
-        s1.showDetails();
+        // Add objects
+        students.add(new student("Madhusmita", 26));
+        students.add(new student("Rahul", 24));
+        students.add(new student("Priya", 22));
+        students.add(new student("shree", 26));
+
+        // Loop through list
+        for (student s : students) {
+            s.showDetails();
+        }
     }
 }
