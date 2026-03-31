@@ -1,22 +1,37 @@
 public class student {
-    String name;
-    int age;
-    double marks;
 
-    // Constructor
-    // Default Constructor
-    public student() {
-        System.out.println("Default constructor called");
+    private String name;
+    private int age;
+    private double marks;
+
+    // Setter methods
+    public void setName(String name) {
+        this.name = name;
     }
 
-    // Parameterized Constructor
-    public student(String name, int age, double marks) {
-        this.name = name;
-        this.age = age;
+    public void setAge(int age) {
+        if (age > 0) {   // validation
+            this.age = age;
+        }
+    }
+
+    public void setMarks(double marks) {
         this.marks = marks;
     }
 
-    // Method
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getMarks() {
+        return marks;
+    }
+
     public void showDetails() {
         System.out.println("Name: " + name);
         System.out.println("Age: " + age);
@@ -25,13 +40,12 @@ public class student {
 
     public static void main(String[] args) {
 
-        student s1 = new student(); // default
+        student s1 = new student();
+
+        s1.setName("Madhusmita");
+//        s1.setAge(26);
+        s1.setMarks(85.5);
+        s1.setAge(-5);
         s1.showDetails();
-
-        student s2 = new student("Madhusmita", 26, 85.5);
-        student s3 = new student("Rahul", 24, 78.0);
-
-        s2.showDetails();
-        s3.showDetails();
     }
 }
